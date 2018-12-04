@@ -1,0 +1,511 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../jacoco-resources/report.gif" type="image/gif"/><title>BipartiDoubleAC.java</title><link rel="stylesheet" href="../../../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">TP2AC (13-Oct-2018 5:17:00 PM)</a> &gt; <a href="../../index.html" class="el_group">log3430tp2</a> &gt; <a href="../index.html" class="el_bundle">src/main/java</a> &gt; <a href="index.source.html" class="el_package">TP2AC</a> &gt; <span class="el_source">BipartiDoubleAC.java</span></div><h1>BipartiDoubleAC.java</h1><pre class="source lang-java linenums">package TP2AC;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+import edu.princeton.cs.algs4.Graph;
+import edu.princeton.cs.algs4.GraphGenerator;
+
+<span class="fc" id="L12">class BipartiDoubleAC {</span>
+	
+	Graph graphe;
+
+	@BeforeEach
+	void setUp() throws Exception {
+<span class="fc" id="L18">	}</span>
+
+	@AfterEach
+	void tearDown() throws Exception {
+<span class="fc" id="L22">		graphe = null;</span>
+<span class="fc" id="L23">	}</span>
+
+	/**
+	 * Test d1
+	 * V11V21P1 -&gt; d1 = 	&lt;{ v1 = -4 , v2 = -4 , p = -1.0 } 	, { erreur }&gt;
+	 */
+	@Test
+	protected void grapheBipartiIntIntDoubleV1V1P1() {
+<span class="fc" id="L31">		int v1 = -4;</span>
+<span class="fc" id="L32">		int v2 = -4;</span>
+<span class="fc" id="L33">		double p = -1.0;</span>
+<span class="fc" id="L34">		assertThrows(IllegalArgumentException.class, () -&gt; {</span>
+<span class="nc" id="L35">			graphe = GraphGenerator.bipartite(v1, v2, p);</span>
+<span class="nc" id="L36">		});</span>
+<span class="fc" id="L37">	}</span>
+	
+	/**
+	 * Test d5
+	 * V11V21P5 -&gt; d5 = 	&lt;{ v1 = -4 , v2 = -4 , p = 1.5 } 	, { erreur }&gt;
+	 */
+	@Test
+	protected void grapheBipartiIntIntDoubleV1V1P5() {
+<span class="fc" id="L45">		int v1 = -4;</span>
+<span class="fc" id="L46">		int v2 = -4;</span>
+<span class="fc" id="L47">		double p = 1.5;</span>
+<span class="fc" id="L48">		assertThrows(IllegalArgumentException.class, () -&gt; {</span>
+<span class="nc" id="L49">			graphe = GraphGenerator.bipartite(v1, v2, p);</span>
+<span class="nc" id="L50">		});</span>
+<span class="fc" id="L51">	}</span>
+	
+	/**
+	 * Test d6
+	 * V11V22P1 -&gt; d6 = 	&lt;{ v1 = -4 , v2 = 0 , p = -1.0 } 	, { erreur }&gt;
+	 */
+	@Test
+	protected void grapheBipartiIntIntDoubleV1V2P1() {
+<span class="fc" id="L59">		int v1 = -4;</span>
+<span class="fc" id="L60">		int v2 = 0;</span>
+<span class="fc" id="L61">		double p = -1.0;</span>
+<span class="fc" id="L62">		assertThrows(IllegalArgumentException.class, () -&gt; {</span>
+<span class="nc" id="L63">			graphe = GraphGenerator.bipartite(v1, v2, p);</span>
+<span class="nc" id="L64">		});</span>
+<span class="fc" id="L65">	}</span>
+	
+	/**
+	 * Test d10
+	 * V11V22P5 -&gt; d10 = 	&lt;{ v1 = -4 , v2 = 0 , p = 1.5 } 	, { erreur }&gt;
+	 */
+	@Test
+	protected void grapheBipartiIntIntDoubleV1V2P5() {
+<span class="fc" id="L73">		int v1 = -4;</span>
+<span class="fc" id="L74">		int v2 = 0;</span>
+<span class="fc" id="L75">		double p = 1.5;</span>
+<span class="fc" id="L76">		assertThrows(IllegalArgumentException.class, () -&gt; {</span>
+<span class="nc" id="L77">			graphe = GraphGenerator.bipartite(v1, v2, p);</span>
+<span class="nc" id="L78">		});</span>
+<span class="fc" id="L79">	}</span>
+	
+	/**
+	 * Test d11
+	 * V11V23P1 -&gt; d11 = 	&lt;{ v1 = -4 , v2 = 4 , p = -1.0 } 	, { erreur }&gt;
+	 */
+	@Test
+	protected void grapheBipartiIntIntDoubleV1V3P1() {
+<span class="fc" id="L87">		int v1 = -4;</span>
+<span class="fc" id="L88">		int v2 = 4;</span>
+<span class="fc" id="L89">		double p = -1.0;</span>
+<span class="fc" id="L90">		assertThrows(IllegalArgumentException.class, () -&gt; {</span>
+<span class="nc" id="L91">			graphe = GraphGenerator.bipartite(v1, v2, p);</span>
+<span class="nc" id="L92">		});</span>
+<span class="fc" id="L93">	}</span>
+	
+	/**
+	 * Test d15
+	 * V11V23P5 -&gt; d15 = 	&lt;{ v1 = -4 , v2 = 4 , p = 1.5 } 	, { erreur }&gt;
+	 */
+	@Test
+	protected void grapheBipartiIntIntDoubleV1V3P5() {
+<span class="fc" id="L101">		int v1 = -4;</span>
+<span class="fc" id="L102">		int v2 = 4;</span>
+<span class="fc" id="L103">		double p = 1.5;</span>
+<span class="fc" id="L104">		assertThrows(IllegalArgumentException.class, () -&gt; {</span>
+<span class="nc" id="L105">			graphe = GraphGenerator.bipartite(v1, v2, p);</span>
+<span class="nc" id="L106">		});</span>
+<span class="fc" id="L107">	}</span>
+	
+	/**
+	 * Test d16
+	 * V12V21P1 -&gt; d16 = 	&lt;{ v1 = 0 , v2 = -4 , p = -1.0 } 	, { erreur }&gt;
+	 */
+	@Test
+	protected void grapheBipartiIntIntDoubleV2V1P1() {
+<span class="fc" id="L115">		int v1 = 0;</span>
+<span class="fc" id="L116">		int v2 = -4;</span>
+<span class="fc" id="L117">		double p = -1.0;</span>
+<span class="fc" id="L118">		assertThrows(IllegalArgumentException.class, () -&gt; {</span>
+<span class="nc" id="L119">			graphe = GraphGenerator.bipartite(v1, v2, p);</span>
+<span class="nc" id="L120">		});</span>
+<span class="fc" id="L121">	}</span>
+	
+	/**
+	 * Test d20
+	 * V12V21P5 -&gt; d20 = 	&lt;{ v1 = 0 , v2 = -4 , p = 1.5 } 	, { erreur }&gt;
+	 */
+	@Test
+	protected void grapheBipartiIntIntDoubleV2V1P5() {
+<span class="fc" id="L129">		int v1 = 0;</span>
+<span class="fc" id="L130">		int v2 = -4;</span>
+<span class="fc" id="L131">		double p = 1.5;</span>
+<span class="fc" id="L132">		assertThrows(IllegalArgumentException.class, () -&gt; {</span>
+<span class="nc" id="L133">			graphe = GraphGenerator.bipartite(v1, v2, p);</span>
+<span class="nc" id="L134">		});</span>
+<span class="fc" id="L135">	}</span>
+	
+	/**
+	 * Test d21
+	 * V12V22P1 -&gt; d21 = 	&lt;{ v1 = 0 , v2 = 0 , p = -1.0 } 	, { erreur }&gt;
+	 */
+	@Test
+	protected void grapheBipartiIntIntDoubleV2V2P1() {
+<span class="fc" id="L143">		int v1 = 0;</span>
+<span class="fc" id="L144">		int v2 = 0;</span>
+<span class="fc" id="L145">		double p = -1.0;</span>
+<span class="fc" id="L146">		assertThrows(IllegalArgumentException.class, () -&gt; {</span>
+<span class="nc" id="L147">			graphe = GraphGenerator.bipartite(v1, v2, p);</span>
+<span class="nc" id="L148">		});</span>
+<span class="fc" id="L149">	}</span>
+	
+	/**
+	 * Test d22
+	 * V12V22P2 -&gt; d22 = 	&lt;{ v1 = 0 , v2 = 0 , p = 0.0 } 		, { grapheOK }&gt;
+	 */
+	@Test
+	protected void grapheBipartiIntIntDoubleV2V2P2() {
+		// Arrange
+<span class="fc" id="L158">		int v1 = 0;</span>
+<span class="fc" id="L159">		int v2 = 0;</span>
+<span class="fc" id="L160">		double p = 0.0;</span>
+		
+		// Act
+<span class="fc" id="L163">		graphe = GraphGenerator.bipartite(v1, v2, p);</span>
+		
+		// Assert
+<span class="fc" id="L166">		assertEquals(graphe.V(), 0, &quot;Expected &quot; + 0 + &quot; vertices, got &quot; + graphe.V() + &quot; vertices.&quot;);</span>
+<span class="fc" id="L167">		assertEquals(graphe.E(), 0, &quot;Expected &quot; + 0 + &quot; edges, got &quot; + graphe.E() + &quot; edges.&quot;);</span>
+<span class="fc" id="L168">	}</span>
+	
+	/**
+	 * Test d23
+	 * V12V22P3 -&gt; d23 = 	&lt;{ v1 = 0 , v2 = 0 , p = 0.5 } 		, { grapheOK }&gt;
+	 */
+	@Test
+	protected void grapheBipartiIntIntDoubleV2V2P3() {
+		// Arrange
+<span class="fc" id="L177">		int v1 = 0;</span>
+<span class="fc" id="L178">		int v2 = 0;</span>
+<span class="fc" id="L179">		double p = 0.5;</span>
+		
+		// Act
+<span class="fc" id="L182">		graphe = GraphGenerator.bipartite(v1, v2, p);</span>
+				
+		// Assert
+<span class="fc" id="L185">		assertEquals(graphe.V(), 0, &quot;Expected &quot; + 0 + &quot; vertices, got &quot; + graphe.V() + &quot; vertices.&quot;);</span>
+<span class="fc" id="L186">		assertEquals(graphe.E(), 0, &quot;Expected &quot; + 0 + &quot; edges, got &quot; + graphe.E() + &quot; edges.&quot;);</span>
+<span class="fc" id="L187">	}</span>
+	
+	/**
+	 * Test d24
+	 * V12V22P4 -&gt; d24 = 	&lt;{ v1 = 0 , v2 = 0 , p = 1.0 } 		, { grapheOK }&gt;
+	 */
+	@Test
+	protected void grapheBipartiIntIntDoubleV2V2P4() {
+		// Arrange
+<span class="fc" id="L196">		int v1 = 0;</span>
+<span class="fc" id="L197">		int v2 = 0;</span>
+<span class="fc" id="L198">		double p = 1.0;</span>
+		
+		// Act
+<span class="fc" id="L201">		graphe = GraphGenerator.bipartite(v1, v2, p);</span>
+				
+		// Assert
+<span class="fc" id="L204">		assertEquals(graphe.V(), 0, &quot;Expected &quot; + 0 + &quot; vertices, got &quot; + graphe.V() + &quot; vertices.&quot;);</span>
+<span class="fc" id="L205">		assertEquals(graphe.E(), 0, &quot;Expected &quot; + 0 + &quot; edges, got &quot; + graphe.E() + &quot; edges.&quot;);</span>
+<span class="fc" id="L206">	}</span>
+	
+	/**
+	 * Test d25
+	 * V12V22P5 -&gt; d25 = 	&lt;{ v1 = 0 , v2 = 0 , p = 1.5 } 		, { erreur }&gt;
+	 */
+	@Test
+	protected void grapheBipartiIntIntDoubleV2V2P5() {
+<span class="fc" id="L214">		int v1 = 0;</span>
+<span class="fc" id="L215">		int v2 = 0;</span>
+<span class="fc" id="L216">		double p = 1.5;</span>
+<span class="fc" id="L217">		assertThrows(IllegalArgumentException.class, () -&gt; {</span>
+<span class="nc" id="L218">			graphe = GraphGenerator.bipartite(v1, v2, p);</span>
+<span class="nc" id="L219">		});</span>
+<span class="fc" id="L220">	}</span>
+	
+	/**
+	 * Test d26
+	 * V12V23P1 -&gt; d26 = 	&lt;{ v1 = 0 , v2 = 4 , p = -1.0 } 	, { erreur }&gt;
+	 */
+	@Test
+	protected void grapheBipartiIntIntDoubleV2V3P1() {
+<span class="fc" id="L228">		int v1 = 0;</span>
+<span class="fc" id="L229">		int v2 = 4;</span>
+<span class="fc" id="L230">		double p = -1.0;</span>
+<span class="fc" id="L231">		assertThrows(IllegalArgumentException.class, () -&gt; {</span>
+<span class="nc" id="L232">			graphe = GraphGenerator.bipartite(v1, v2, p);</span>
+<span class="nc" id="L233">		});</span>
+<span class="fc" id="L234">	}</span>
+	
+	/**
+	 * Test d27
+	 * V12V23P2 -&gt; d27 = 	&lt;{ v1 = 0 , v2 = 4 , p = 0.0 } 		, { grapheOK }&gt;
+	 */
+	@Test
+	protected void grapheBipartiIntIntDoubleV2V3P2() {
+		// Arrange
+<span class="fc" id="L243">		int v1 = 0;</span>
+<span class="fc" id="L244">		int v2 = 4;</span>
+<span class="fc" id="L245">		double p = 0.0;</span>
+		
+		// Act
+<span class="fc" id="L248">		graphe = GraphGenerator.bipartite(v1, v2, p);</span>
+		
+		// Assert
+<span class="fc" id="L251">		assertEquals(graphe.V(), v2, &quot;Expected &quot; + v2 + &quot; vertices, got &quot; + graphe.V() + &quot; vertices.&quot;);</span>
+<span class="fc" id="L252">		assertEquals(graphe.E(), 0, &quot;Expected &quot; + 0 + &quot; edges, got &quot; + graphe.E() + &quot; edges.&quot;);</span>
+<span class="fc" id="L253">	}</span>
+	
+	/**
+	 * Test d28
+	 * V12V23P3 -&gt; d28 = 	&lt;{ v1 = 0 , v2 = 4 , p = 0.5 } 		, { grapheOK }&gt;
+	 */
+	@Test
+	protected void grapheBipartiIntIntDoubleV2V3P3() {
+		// Arrange
+<span class="fc" id="L262">		int v1 = 0;</span>
+<span class="fc" id="L263">		int v2 = 4;</span>
+<span class="fc" id="L264">		double p = 0.5;</span>
+		
+		// Act
+<span class="fc" id="L267">		graphe = GraphGenerator.bipartite(v1, v2, p);</span>
+		
+		// Assert
+<span class="fc" id="L270">		assertEquals(graphe.V(), v2, &quot;Expected &quot; + v2 + &quot; vertices, got &quot; + graphe.V() + &quot; vertices.&quot;);</span>
+<span class="fc" id="L271">		assertEquals(graphe.E(), 0, &quot;Expected &quot; + 0 + &quot; edges, got &quot; + graphe.E() + &quot; edges.&quot;);</span>
+<span class="fc" id="L272">	}</span>
+	
+	/**
+	 * Test d29
+	 * V12V23P4 -&gt; d29 = 	&lt;{ v1 = 0 , v2 = 4 , p = 1.0 } 		, { grapheOK }&gt;
+	 */
+	@Test
+	protected void grapheBipartiIntIntDoubleV2V3P4() {
+		// Arrange
+<span class="fc" id="L281">		int v1 = 0;</span>
+<span class="fc" id="L282">		int v2 = 4;</span>
+<span class="fc" id="L283">		double p = 1.0;</span>
+		
+		// Act
+<span class="fc" id="L286">		graphe = GraphGenerator.bipartite(v1, v2, p);</span>
+		
+		// Assert
+<span class="fc" id="L289">		assertEquals(graphe.V(), v2, &quot;Expected &quot; + v2 + &quot; vertices, got &quot; + graphe.V() + &quot; vertices.&quot;);</span>
+<span class="fc" id="L290">		assertEquals(graphe.E(), 0, &quot;Expected &quot; + 0 + &quot; edges, got &quot; + graphe.E() + &quot; edges.&quot;);</span>
+<span class="fc" id="L291">	}</span>
+	
+	/**
+	 * Test d30
+	 * V12V23P5 -&gt; d30 = 	&lt;{ v1 = 0 , v2 = 4 , p = 1.5 } 		, { erreur }&gt;
+	 */
+	@Test
+	protected void grapheBipartiIntIntDoubleV2V3P5() {
+		// Arrange
+<span class="fc" id="L300">		int v1 = 0;</span>
+<span class="fc" id="L301">		int v2 = 4;</span>
+<span class="fc" id="L302">		double p = 1.5;</span>
+<span class="fc" id="L303">		assertThrows(IllegalArgumentException.class, () -&gt; {</span>
+<span class="nc" id="L304">			graphe = GraphGenerator.bipartite(v1, v2, p);</span>
+<span class="nc" id="L305">		});</span>
+<span class="fc" id="L306">	}</span>
+	
+	/**
+	 * Test d31
+	 * V13V21P1 -&gt; d31 = 	&lt;{ v1 = 4 , v2 = -4 , p = -1.0 } 	, { erreur }&gt;
+	 */
+	@Test
+	protected void grapheBipartiIntIntDoubleV3V1P1() {
+		// Arrange
+<span class="fc" id="L315">		int v1 = 4;</span>
+<span class="fc" id="L316">		int v2 = -4;</span>
+<span class="fc" id="L317">		double p = -1.0;</span>
+<span class="fc" id="L318">		assertThrows(IllegalArgumentException.class, () -&gt; {</span>
+<span class="nc" id="L319">			graphe = GraphGenerator.bipartite(v1, v2, p);</span>
+<span class="nc" id="L320">		});</span>
+<span class="fc" id="L321">	}</span>
+	
+	/**
+	 * Test d35
+	 * V13V21P5 -&gt; d35 = 	&lt;{ v1 = 4 , v2 = -4 , p = 1.5 } 	, { erreur }&gt;
+	 */
+	@Test
+	protected void grapheBipartiIntIntDoubleV3V1P5() {
+<span class="fc" id="L329">		int v1 = 4;</span>
+<span class="fc" id="L330">		int v2 = -4;</span>
+<span class="fc" id="L331">		double p = 1.5;</span>
+<span class="fc" id="L332">		assertThrows(IllegalArgumentException.class, () -&gt; {</span>
+<span class="nc" id="L333">			graphe = GraphGenerator.bipartite(v1, v2, p);</span>
+<span class="nc" id="L334">		});</span>
+<span class="fc" id="L335">	}</span>
+	
+	/**
+	 * Test d36
+	 * V13V22P1 -&gt; d36 = 	&lt;{ v1 = 4 , v2 = 0 , p = -1.0 } 	, { erreur }&gt;
+	 */
+	@Test
+	protected void grapheBipartiIntIntDoubleV3V2P1() {
+<span class="fc" id="L343">		int v1 = 4;</span>
+<span class="fc" id="L344">		int v2 = 0;</span>
+<span class="fc" id="L345">		double p = -1.0;</span>
+<span class="fc" id="L346">		assertThrows(IllegalArgumentException.class, () -&gt; {</span>
+<span class="nc" id="L347">			graphe = GraphGenerator.bipartite(v1, v2, p);</span>
+<span class="nc" id="L348">		});</span>
+<span class="fc" id="L349">	}</span>
+	
+	/**
+	 * Test d37
+	 * V13V22P2 -&gt; d37 = 	&lt;{ v1 = 4 , v2 = 0 , p = 0.0 } 		, { grapheOK }&gt;
+	 */
+	@Test
+	protected void grapheBipartiIntIntDoubleV3V2P2() {
+		// Arrange
+<span class="fc" id="L358">		int v1 = 4;</span>
+<span class="fc" id="L359">		int v2 = 0;</span>
+<span class="fc" id="L360">		double p = 0.0;</span>
+		
+		// Act
+<span class="fc" id="L363">		graphe = GraphGenerator.bipartite(v1, v2, p);</span>
+		
+		// Assert
+<span class="fc" id="L366">		assertEquals(graphe.V(), v1, &quot;Expected &quot; + v1 + &quot; vertices, got &quot; + graphe.V() + &quot; vertices.&quot;);</span>
+<span class="fc" id="L367">		assertEquals(graphe.E(), 0, &quot;Expected &quot; + 0 + &quot; edges, got &quot; + graphe.E() + &quot; edges.&quot;);</span>
+<span class="fc" id="L368">	}</span>
+	
+	/**
+	 * Test d38
+	 * V13V22P3 -&gt; d38 = 	&lt;{ v1 = 4 , v2 = 0 , p = 0.5 } 		, { grapheOK }&gt;
+	 */
+	@Test
+	protected void grapheBipartiIntIntDoubleV3V2P3() {
+		// Arrange
+<span class="fc" id="L377">		int v1 = 4;</span>
+<span class="fc" id="L378">		int v2 = 0;</span>
+<span class="fc" id="L379">		double p = 0.5;</span>
+<span class="fc" id="L380">		int maxEdges = v1 * v2;</span>
+		
+		// Act
+<span class="fc" id="L383">		graphe = GraphGenerator.bipartite(v1, v2, p);</span>
+		
+		// Assert
+<span class="fc" id="L386">		assertEquals(graphe.V(), v1, &quot;Expected &quot; + v1 + &quot; vertices, got &quot; + graphe.V() + &quot; vertices.&quot;);</span>
+<span class="pc bpc" id="L387" title="1 of 2 branches missed.">		assertTrue(graphe.E() &lt;= maxEdges, &quot;Expected &quot; + maxEdges + &quot; edges, got &quot; + graphe.E() + &quot; edges.&quot;);</span>
+<span class="fc" id="L388">	}</span>
+	
+	/**
+	 * Test d39
+	 * V13V22P4 -&gt; d39 = 	&lt;{ v1 = 4 , v2 = 0 , p = 1.0 } 		, { grapheOK }&gt;
+	 */
+	@Test
+	protected void grapheBipartiIntIntDoubleV3V2P4() {
+		// Arrange
+<span class="fc" id="L397">		int v1 = 4;</span>
+<span class="fc" id="L398">		int v2 = 0;</span>
+<span class="fc" id="L399">		double p = 1.0;</span>
+<span class="fc" id="L400">		int maxEdges = v1 * v2;</span>
+		
+		// Act
+<span class="fc" id="L403">		graphe = GraphGenerator.bipartite(v1, v2, p);</span>
+		
+		// Assert
+<span class="fc" id="L406">		assertEquals(graphe.V(), v1, &quot;Expected &quot; + v1 + &quot; vertices, got &quot; + graphe.V() + &quot; vertices.&quot;);</span>
+<span class="fc" id="L407">		assertEquals(graphe.E(), maxEdges, &quot;Expected &quot; + maxEdges + &quot; edges, got &quot; + graphe.E() + &quot; edges.&quot;);</span>
+<span class="fc" id="L408">	}</span>
+	
+	/**
+	 * Test d40
+	 * V13V22P5 -&gt; d40 = 	&lt;{ v1 = 4 , v2 = 0 , p = 1.5 } 		, { erreur }&gt;
+	 */
+	@Test
+	protected void grapheBipartiIntIntDoubleV3V2P5() {
+<span class="fc" id="L416">		int v1 = 4;</span>
+<span class="fc" id="L417">		int v2 = 0;</span>
+<span class="fc" id="L418">		double p = 1.5;</span>
+<span class="fc" id="L419">		assertThrows(IllegalArgumentException.class, () -&gt; {</span>
+<span class="nc" id="L420">			graphe = GraphGenerator.bipartite(v1, v2, p);</span>
+<span class="nc" id="L421">		});</span>
+<span class="fc" id="L422">	}</span>
+	
+	/**
+	 * Test d41
+	 * V13V23P1 -&gt; d41 = 	&lt;{ v1 = 4 , v2 = 4 , p = -1.0 } 	, { erreur }&gt;
+	 */
+	@Test
+	protected void grapheBipartiIntIntDoubleV3V3P1() {
+<span class="fc" id="L430">		int v1 = 4;</span>
+<span class="fc" id="L431">		int v2 = 4;</span>
+<span class="fc" id="L432">		double p = -1.0;</span>
+<span class="fc" id="L433">		assertThrows(IllegalArgumentException.class, () -&gt; {</span>
+<span class="nc" id="L434">			graphe = GraphGenerator.bipartite(v1, v2, p);</span>
+<span class="nc" id="L435">		});</span>
+<span class="fc" id="L436">	}</span>
+	
+	/**
+	 * Test d42
+	 * V13V23P2 -&gt; d42 = 	&lt;{ v1 = 4 , v2 = 4 , p = 0.0 } 		, { grapheOK }&gt;
+	 */
+	@Test
+	protected void grapheBipartiIntIntDoubleV3V3P2() {
+		// Arrange
+<span class="fc" id="L445">		int v1 = 4;</span>
+<span class="fc" id="L446">		int v2 = 4;</span>
+<span class="fc" id="L447">		double p = 0.0;</span>
+		
+		// Act
+<span class="fc" id="L450">		graphe = GraphGenerator.bipartite(v1, v2, p);</span>
+		
+		// Assert
+<span class="fc" id="L453">		assertEquals(graphe.V(), v1 + v2, &quot;Expected &quot; + (v1 + v2) + &quot; vertices, got &quot; + graphe.V() + &quot; vertices.&quot;);</span>
+<span class="fc" id="L454">		assertEquals(graphe.E(), 0, &quot;Expected &quot; + 0 + &quot; edges, got &quot; + graphe.E() + &quot; edges.&quot;);</span>
+<span class="fc" id="L455">	}</span>
+	
+	/**
+	 * Test d43
+	 * V13V23P3 -&gt; d43 = 	&lt;{ v1 = 4 , v2 = 4 , p = 0.5 } 		, { grapheOK }&gt;
+	 */
+	@Test
+	protected void grapheBipartiIntIntDoubleV3V3P3() {
+		// Arrange
+<span class="fc" id="L464">		int v1 = 4;</span>
+<span class="fc" id="L465">		int v2 = 4;</span>
+<span class="fc" id="L466">		double p = 0.5;</span>
+<span class="fc" id="L467">		int maxEdges = v1 * v2;</span>
+		
+		// Act
+<span class="fc" id="L470">		graphe = GraphGenerator.bipartite(v1, v2, p);</span>
+		
+		// Assert
+<span class="fc" id="L473">		assertEquals(graphe.V(), v1 + v2, &quot;Expected &quot; + (v1 + v2) + &quot; vertices, got &quot; + graphe.V() + &quot; vertices.&quot;);</span>
+<span class="pc bpc" id="L474" title="1 of 2 branches missed.">		assertTrue(graphe.E() &lt;= maxEdges, &quot;Expected less then&quot; + maxEdges + &quot; edges, got &quot; + graphe.E() + &quot; edges.&quot;);</span>
+<span class="fc" id="L475">	}</span>
+	
+	/**
+	 * Test d44
+	 * V13V23P4 -&gt; d44 = 	&lt;{ v1 = 4 , v2 = 4 , p = 1.0 } 		, { grapheOK }&gt;
+	 */
+	@Test
+	protected void grapheBipartiIntIntDoubleV3V3P4() {
+		// Arrange
+<span class="fc" id="L484">		int v1 = 4;</span>
+<span class="fc" id="L485">		int v2 = 4;</span>
+<span class="fc" id="L486">		double p = 1.0;</span>
+<span class="fc" id="L487">		int maxEdges = v1 * v2;</span>
+		
+		// Act
+<span class="fc" id="L490">		graphe = GraphGenerator.bipartite(v1, v2, p);</span>
+		
+		// Assert
+<span class="fc" id="L493">		assertEquals(graphe.V(), v1 + v2, &quot;Expected &quot; + (v1 + v2) + &quot; vertices, got &quot; + graphe.V() + &quot; vertices.&quot;);</span>
+<span class="fc" id="L494">		assertEquals(graphe.E(), maxEdges, &quot;Expected &quot; + maxEdges + &quot; edges, got &quot; + graphe.E() + &quot; edges.&quot;);</span>
+<span class="fc" id="L495">	}</span>
+	
+	/**
+	 * Test d45
+	 * V13V23P4 -&gt; d45 = 	&lt;{ v1 = 4 , v2 = 4 , p = 1.5 } 		, { erreur }&gt;
+	 */
+	@Test
+	protected void grapheBipartiIntIntDoubleV3V3P5() {
+<span class="fc" id="L503">		int v1 = 4;</span>
+<span class="fc" id="L504">		int v2 = 4;</span>
+<span class="fc" id="L505">		double p = 1.5;</span>
+<span class="fc" id="L506">		assertThrows(IllegalArgumentException.class, () -&gt; {</span>
+<span class="nc" id="L507">			graphe = GraphGenerator.bipartite(v1, v2, p);</span>
+<span class="nc" id="L508">		});</span>
+<span class="fc" id="L509">	}</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.2.201808211720</span>TP2AC (13-Oct-2018 5:17:00 PM)</div></body></html>

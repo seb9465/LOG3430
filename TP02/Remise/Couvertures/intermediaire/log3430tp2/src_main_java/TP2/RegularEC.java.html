@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../jacoco-resources/report.gif" type="image/gif"/><title>RegularEC.java</title><link rel="stylesheet" href="../../../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">couvertureEC (13-Oct-2018 5:07:11 PM)</a> &gt; <a href="../../index.html" class="el_group">log3430tp2</a> &gt; <a href="../index.html" class="el_bundle">src/main/java</a> &gt; <a href="index.source.html" class="el_package">TP2</a> &gt; <span class="el_source">RegularEC.java</span></div><h1>RegularEC.java</h1><pre class="source lang-java linenums">package TP2;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+import edu.princeton.cs.algs4.Graph;
+import edu.princeton.cs.algs4.GraphGenerator;
+
+<span class="nc" id="L12">class RegularEC {</span>
+	
+	Graph graphe;
+
+	@BeforeEach
+	void setUp() throws Exception {
+<span class="nc" id="L18">	}</span>
+
+	@AfterEach
+	void tearDown() throws Exception {
+<span class="nc" id="L22">		graphe = null;</span>
+<span class="nc" id="L23">	}</span>
+
+	/**
+	 * Test e1
+	 * V1K1 -&gt; e1 =	&lt;{ v = -1, k = -1 }	, { erreur }&gt;
+	 */
+	@Test
+	protected void grapheRegularV1K1() {
+		// Arrange
+<span class="nc" id="L32">		int v = -1;</span>
+<span class="nc" id="L33">		int k = -1;</span>
+		
+		// Assert
+<span class="nc" id="L36">		assertThrows(IllegalArgumentException.class, () -&gt; {</span>
+			// Act
+<span class="nc" id="L38">			graphe = GraphGenerator.regular(v, k);</span>
+<span class="nc" id="L39">		});</span>
+<span class="nc" id="L40">	}</span>
+	
+	/**
+	 * Test e6
+	 * V2K3 -&gt; e6 =	&lt;{ v = 4, k = 5 }	, { grapheOK }&gt;
+	 */
+	@Test
+	protected void grapheRegularV2K3() {
+		// Arrange
+<span class="nc" id="L49">		int v = 4;</span>
+<span class="nc" id="L50">		int k = 5;</span>
+<span class="nc" id="L51">		int maxEdges = v * k;</span>
+		
+		// Act
+<span class="nc" id="L54">		graphe = GraphGenerator.regular(v, k);</span>
+		
+		// Assert
+<span class="nc" id="L57">		assertEquals(graphe.V(), v, &quot;Expected &quot; + v + &quot; vertices, got &quot; + graphe.V() + &quot; vertices.&quot;);</span>
+<span class="nc bnc" id="L58" title="All 2 branches missed.">		assertTrue(graphe.E() &lt;= maxEdges, &quot;Expected less then &quot; + maxEdges + &quot; edges, got &quot; + graphe.E() + &quot; edges.&quot;);</span>
+<span class="nc" id="L59">	}</span>
+	
+	/**
+	 * Test e8
+	 * V3K2 -&gt; e8 =	&lt;{ v = 5, k = 2 }	, { grapheOK }&gt;
+	 */
+	@Test
+	protected void grapheRegularV3K2() {
+		// Arrange
+<span class="nc" id="L68">		int v = 5;</span>
+<span class="nc" id="L69">		int k = 2;</span>
+<span class="nc" id="L70">		int maxEdges = v * k;</span>
+		
+		// Act
+<span class="nc" id="L73">		graphe = GraphGenerator.regular(v, k);</span>
+		
+		// Assert
+<span class="nc" id="L76">		assertEquals(graphe.V(), v, &quot;Expected &quot; + v + &quot; vertices, got &quot; + graphe.V() + &quot; vertices.&quot;);</span>
+<span class="nc bnc" id="L77" title="All 2 branches missed.">		assertTrue(graphe.E() &lt;= maxEdges, &quot;Expected less then &quot; + maxEdges + &quot; edges, got &quot; + graphe.E() + &quot; edges.&quot;);</span>
+<span class="nc" id="L78">	}</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.2.201808211720</span>couvertureEC (13-Oct-2018 5:07:11 PM)</div></body></html>

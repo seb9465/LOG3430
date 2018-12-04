@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../jacoco-resources/report.gif" type="image/gif"/><title>SimpleIntEC.java</title><link rel="stylesheet" href="../../../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">TP2 (1) (14-Oct-2018 10:12:40 AM)</a> &gt; <a href="../../index.html" class="el_group">log3430tp2</a> &gt; <a href="../index.html" class="el_bundle">src/main/java</a> &gt; <a href="index.source.html" class="el_package">TP2</a> &gt; <span class="el_source">SimpleIntEC.java</span></div><h1>SimpleIntEC.java</h1><pre class="source lang-java linenums">package TP2;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+import edu.princeton.cs.algs4.Graph;
+import edu.princeton.cs.algs4.GraphGenerator;
+
+<span class="fc" id="L12">class SimpleIntEC {</span>
+
+	Graph graphe;
+	
+	@BeforeEach
+	void setUp() throws Exception {
+<span class="fc" id="L18">	}</span>
+
+	@AfterEach
+	void tearDown() throws Exception {
+<span class="fc" id="L22">		graphe = null;</span>
+<span class="fc" id="L23">	}</span>
+
+	/**
+	 * Test a4
+	 * V1E4 -&gt; a4 = 	&lt;{ v = -4 , e = 20 } 	, { erreur }&gt;
+	 */
+	@Test
+	protected void grapheSimpleIntIntV1E4() {
+<span class="fc" id="L31">		int v = -4;</span>
+<span class="fc" id="L32">		int e = 20;</span>
+<span class="fc" id="L33">		assertThrows(IllegalArgumentException.class, () -&gt; {</span>
+<span class="nc" id="L34">			graphe = GraphGenerator.simple(v, e);</span>
+<span class="nc" id="L35">		});</span>
+<span class="fc" id="L36">	}</span>
+
+	/**
+	 * Tests a7
+	 * V2E3 -&gt; a7 = 	&lt;{ v = 0 , e = 0 } 		, { grapheOK }&gt;
+	 */
+	@Test
+	protected void grapheSimpleIntIntV2E2() {
+<span class="fc" id="L44">		int v = 0;</span>
+<span class="fc" id="L45">		int e = 0;</span>
+<span class="fc" id="L46">		graphe = GraphGenerator.simple(v, e);</span>
+<span class="fc" id="L47">		assertEquals(graphe.V(), v, &quot;Expected &quot; + v + &quot; vertices, got &quot; + graphe.V() + &quot; vertices.&quot;);</span>
+<span class="fc" id="L48">		assertEquals(graphe.E(), e, &quot;Expected &quot; + e + &quot; edges, got &quot; + graphe.E() + &quot; edges.&quot;);</span>
+<span class="fc" id="L49">	}</span>
+	
+	/**
+	 * Test a9
+	 * V3E1 -&gt; a9 = 	&lt;{ v = 4 , e = -1 } 	, { erreur }&gt;
+	 */
+	@Test
+	protected void grapheSimpleIntIntV3E1() {
+<span class="fc" id="L57">		int v = 4;</span>
+<span class="fc" id="L58">		int e = -1;</span>
+<span class="fc" id="L59">		assertThrows(IllegalArgumentException.class, () -&gt; {</span>
+<span class="nc" id="L60">			graphe = GraphGenerator.simple(v, e);</span>
+<span class="nc" id="L61">		});</span>
+<span class="fc" id="L62">	}</span>
+	
+	/**
+	 * Test a10
+	 * V3E2 -&gt; a10 = 	&lt;{ v = 4 , e = 0 } 		, { grapheOK }&gt;
+	 */
+	@Test
+	protected void grapheSimpleIntIntV3E2() {
+<span class="fc" id="L70">		int v = 4;</span>
+<span class="fc" id="L71">		int e = 0;</span>
+<span class="fc" id="L72">		graphe = GraphGenerator.simple(v, e);</span>
+<span class="fc" id="L73">		assertEquals(graphe.V(), v, &quot;Expected &quot; + v + &quot; vertices, got &quot; + graphe.V() + &quot; vertices.&quot;);</span>
+<span class="fc" id="L74">		assertEquals(graphe.E(), e, &quot;Expected &quot; + e + &quot; edges, got &quot; + graphe.E() + &quot; edges.&quot;);</span>
+<span class="fc" id="L75">	}</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.2.201808211720</span>TP2 (1) (14-Oct-2018 10:12:40 AM)</div></body></html>

@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../jacoco-resources/report.gif" type="image/gif"/><title>RegularAC.java</title><link rel="stylesheet" href="../../../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">TP2AC (13-Oct-2018 5:17:00 PM)</a> &gt; <a href="../../index.html" class="el_group">log3430tp2</a> &gt; <a href="../index.html" class="el_bundle">src/main/java</a> &gt; <a href="index.source.html" class="el_package">TP2AC</a> &gt; <span class="el_source">RegularAC.java</span></div><h1>RegularAC.java</h1><pre class="source lang-java linenums">package TP2AC;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+import edu.princeton.cs.algs4.Graph;
+import edu.princeton.cs.algs4.GraphGenerator;
+
+<span class="fc" id="L12">class RegularAC {</span>
+	
+	Graph graphe;
+
+	@BeforeEach
+	void setUp() throws Exception {
+<span class="fc" id="L18">	}</span>
+
+	@AfterEach
+	void tearDown() throws Exception {
+<span class="fc" id="L22">		graphe = null;</span>
+<span class="fc" id="L23">	}</span>
+
+	/**
+	 * Test e1
+	 * V1K1 -&gt; e1 =	&lt;{ v = -1, k = -1 }	, { erreur }&gt;
+	 */
+	@Test
+	protected void grapheRegularV1K1() {
+<span class="fc" id="L31">		int v = -1;</span>
+<span class="fc" id="L32">		int k = -1;</span>
+<span class="fc" id="L33">		assertThrows(IllegalArgumentException.class, () -&gt; {</span>
+<span class="nc" id="L34">			graphe = GraphGenerator.regular(v, k);</span>
+<span class="nc" id="L35">		});</span>
+<span class="fc" id="L36">	}</span>
+	
+	/**
+	 * Test e4
+	 * V2K1 -&gt; e4 =	&lt;{ v = 4, k = -1 }	, { erreur }&gt;
+	 */
+	@Test
+	protected void grapheRegularV2K1() {
+<span class="fc" id="L44">		int v = 4;</span>
+<span class="fc" id="L45">		int k = -1;</span>
+<span class="fc" id="L46">		assertThrows(Exception.class, () -&gt; {</span>
+<span class="nc" id="L47">			graphe = GraphGenerator.regular(v, k);</span>
+<span class="nc" id="L48">		});</span>
+<span class="fc" id="L49">	}</span>
+	
+	/**
+	 * Test e5
+	 * V2K2 -&gt; e5 =	&lt;{ v = 4, k = 2 }	, { grapheOK }&gt;
+	 */
+	@Test
+	protected void grapheRegularV2K2() {
+		// Arrange
+<span class="fc" id="L58">		int v = 4;</span>
+<span class="fc" id="L59">		int k = 2;</span>
+<span class="fc" id="L60">		int maxEdges = v * k;</span>
+		
+		// Act
+<span class="fc" id="L63">		graphe = GraphGenerator.regular(v, k);</span>
+		
+		// Assert
+<span class="fc" id="L66">		assertEquals(graphe.V(), v, &quot;Expected &quot; + v + &quot; vertices, got &quot; + graphe.V() + &quot; vertices.&quot;);</span>
+<span class="pc bpc" id="L67" title="1 of 2 branches missed.">		assertTrue(graphe.E() &lt;= maxEdges, &quot;Expected less then &quot; + maxEdges + &quot; edges, got &quot; + graphe.E() + &quot; edges.&quot;);</span>
+<span class="fc" id="L68">	}</span>
+	
+	/**
+	 * Test e6
+	 * V2K3 -&gt; e6 =	&lt;{ v = 4, k = 5 }	, { grapheOK }&gt;
+	 */
+	@Test
+	protected void grapheRegularV2K3() {
+		// Arrange
+<span class="fc" id="L77">		int v = 4;</span>
+<span class="fc" id="L78">		int k = 5;</span>
+<span class="fc" id="L79">		int maxEdges = v * k;</span>
+		
+		// Act
+<span class="fc" id="L82">		graphe = GraphGenerator.regular(v, k);</span>
+		
+		// Assert
+<span class="fc" id="L85">		assertEquals(graphe.V(), v, &quot;Expected &quot; + v + &quot; vertices, got &quot; + graphe.V() + &quot; vertices.&quot;);</span>
+<span class="pc bpc" id="L86" title="1 of 2 branches missed.">		assertTrue(graphe.E() &lt;= maxEdges, &quot;Expected less then &quot; + maxEdges + &quot; edges, got &quot; + graphe.E() + &quot; edges.&quot;);</span>
+<span class="fc" id="L87">	}</span>
+	
+	/**
+	 * Test e7
+	 * V3K1 -&gt; e7 =	&lt;{ v = 5, k = -1 }	, { erreur }&gt;
+	 */
+	@Test
+	protected void grapheRegularV3K1() {
+<span class="fc" id="L95">		int v = 5;</span>
+<span class="fc" id="L96">		int k = -1;</span>
+<span class="fc" id="L97">		assertThrows(IllegalArgumentException.class, () -&gt; {</span>
+<span class="nc" id="L98">			graphe = GraphGenerator.regular(v, k);</span>
+<span class="nc" id="L99">		});</span>
+<span class="fc" id="L100">	}</span>
+	
+	/**
+	 * Test e8
+	 * V3K2 -&gt; e8 =	&lt;{ v = 5, k = 2 }	, { grapheOK }&gt;
+	 */
+	@Test
+	protected void grapheRegularV3K2() {
+		// Arrange
+<span class="fc" id="L109">		int v = 5;</span>
+<span class="fc" id="L110">		int k = 2;</span>
+<span class="fc" id="L111">		int maxEdges = v * k;</span>
+		
+		// Act
+<span class="fc" id="L114">		graphe = GraphGenerator.regular(v, k);</span>
+		
+		// Assert
+<span class="fc" id="L117">		assertEquals(graphe.V(), v, &quot;Expected &quot; + v + &quot; vertices, got &quot; + graphe.V() + &quot; vertices.&quot;);</span>
+<span class="pc bpc" id="L118" title="1 of 2 branches missed.">		assertTrue(graphe.E() &lt;= maxEdges, &quot;Expected less then &quot; + maxEdges + &quot; edges, got &quot; + graphe.E() + &quot; edges.&quot;);</span>
+<span class="fc" id="L119">	}</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.2.201808211720</span>TP2AC (13-Oct-2018 5:17:00 PM)</div></body></html>
